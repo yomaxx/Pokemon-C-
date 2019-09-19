@@ -1,9 +1,4 @@
 <?php
-    if (isset($_POST["color"]))     
-        {
-        $_GET["color"] = $color;    
-        }
-
     if (!isset($_GET["HeadTitle"]) || $_GET["HeadTitle"] === '')
         {
         $_GET["HeadTitle"] = 'Welcome to this test page.';
@@ -16,10 +11,13 @@
         <meta charset="UTF-8">
         <title>My Website</title>
         <style type="text/css">
-            body{
-                background-color: <?= $_GET["color"] ?>; <!-- Maak de Bg kleur wat er in $_GET color zit -->
+            h3 {
+                display: inline-block;
             }
-        </style>
+            body{
+                background-color: <?= $_GET["color"] ?>; 
+            }
+        </style> <!-- Hier maken we van de background-color de waarde in  $_GET["color"] -->
     </head>
 
     <body>
@@ -34,8 +32,36 @@
                 <option value="yellow">yellow</option>
                 <option value="green">green</option>
             </select>
+
+            <h2>Select size of table</h2>
+                <h3>X-waarde: </h3>
+                <input type="text" name="X-size"><br>
+                <h3>Y-waarde: </h3>
+                <input type="text" name="Y-size">
+            
+            <h2>Table:</h2>
+            <table align="left" border="1" cellpadding="5" cellspacing="0">
+            <?php
+                if(isset($_GET["X-size"]) && isset($_GET["Y-size"]))
+                    {
+                    $k = 0;
+                    for($i=1 ;$i<=$_GET["Y-size"] ;$i++)
+                        {
+                        echo "<tr>";
+                        for ($j=1 ;$j<=$_GET["X-size"] ;$j++)
+                            {
+                            $k++;
+                            echo "<td>$k</td>";
+                            }
+                        echo "</tr>";
+                        }
+                    }
+            ?>
+            </table>
             <br></br>
             <button type="submit">Submit changes</button> <!-- submit knop -->
         </form>
+
+
     </body>
 </html>
