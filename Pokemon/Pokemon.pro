@@ -4,14 +4,15 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        Creature.cpp \
+    Trainer.cpp \
+     Trainer.cpp \
         Player.cpp \
         main.cpp \
     battle.cpp \
     Pokemon.cpp
 
 HEADERS += \
-    Creature.h \
     Player.h \
+    Trainer.h \
     battle.h \
     Pokemon.h

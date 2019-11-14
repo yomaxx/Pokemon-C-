@@ -1,3 +1,3 @@
 #include <Player.h>
 
-bool Player::Won(){return (m_level);}
+bool Player::Won(){return (p_BattlesWon);}

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <time.h>
 #include <Player.h>
-#include <Creature.h>
+#include <Trainer.h>
 #include <battle.h>
 
 using namespace std;
