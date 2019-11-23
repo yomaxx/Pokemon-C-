@@ -9,10 +9,15 @@ SOURCES += \
         Player.cpp \
         main.cpp \
     battle.cpp \
-    Pokemon.cpp
+    Pokemon.cpp \
+    utility.cpp
 
 HEADERS += \
     Player.h \
     Trainer.h \
     battle.h \
-    Pokemon.h
+    Pokemon.h \
+    utility.h
+
+RESOURCES += \
+    music.qrc

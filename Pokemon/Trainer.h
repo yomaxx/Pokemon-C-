@@ -1,7 +1,6 @@
-#ifndef CREATURE_H
-#define CREATURE_H
+#include <Pokemon.h>
 
-class Trainer
+class Trainer : public Pokemon
 {
 public:
 
@@ -11,4 +10,4 @@ private:
     int t_Health;
 };
 
-#endif // CREATURE_H
+

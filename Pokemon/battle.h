@@ -5,4 +5,7 @@ class Player;
 
 void PokemonBattle(Player p);
 
+void PlayerAttacks();
+
+void TrainerAttacks();
 #endif // BATTLE_H

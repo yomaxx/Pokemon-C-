@@ -23,7 +23,7 @@ int main()
     //while je nog niet fainted of gewonnen hebt
     while(!p.Fainted() && !p.Won())
     {
-        PokemonBattle(p);       //start battle en geef naam in p mee
+        PokemonBattle(p);       //start battle en geef naam p mee
 
         if(p.Fainted())
         {
