@@ -1,10 +1,15 @@
+#pragma once
 #include <Pokemon.h>
 
 class Trainer : public Pokemon
 {
 public:
+    Trainer(const std::string &name);
 
-    bool t_Fainted() const;
+    bool Fainted() const;
+
+    Trainer();
+    ~Trainer();
 
 private:
     int t_Health;

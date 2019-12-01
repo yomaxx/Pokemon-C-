@@ -1,20 +1,19 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include <Trainer.h>
-#include <iostream>
 
-
-class Player
+class Player : public Pokemon
 {
 public:
     Player(const std::string &name);
 
     bool Won();
-    bool p_Fainted();
+    bool Fainted();
+    int GetHealth() const;
 
-private:
-    int p_BattlesWon;
-    int p_Health;
+protected:
+    int BattlesWon;
+    int Health;
 
 };
 

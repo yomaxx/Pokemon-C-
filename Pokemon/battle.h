@@ -1,11 +1,17 @@
+#pragma once
 #ifndef BATTLE_H
 #define BATTLE_H
+#include <player.h>
 
-class Player;
 
-void PokemonBattle(Player p);
+class Battle
+{
+public:
+    void PokemonBattle(Player p);
 
-void PlayerAttacks();
+    void PlayerAttacks(Player p, Trainer E );
+    void TrainerAttacks(Player P, Trainer E);
 
-void TrainerAttacks();
+private:
+};
 #endif // BATTLE_H

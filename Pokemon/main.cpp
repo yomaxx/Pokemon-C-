@@ -1,7 +1,6 @@
 #include <iostream>
 #include <battle.h>
 #include <Pokemon.h>
-#include <iostream>
 #include <time.h>
 #include <Player.h>
 #include <Trainer.h>
@@ -20,10 +19,15 @@ int main()
     std::cin >> playerName;     //naam uitlezen en opslaan in playername
     Player p(playerName);       //player p aanmaken met je naam
 
+    std::cout << "Enter the name of your rival (no spaces): ";
+    std::string TrainerName;
+    std::cin >> TrainerName;
+    Trainer t(TrainerName);
+
     //while je nog niet fainted of gewonnen hebt
     while(!p.Fainted() && !p.Won())
     {
-        PokemonBattle(p);       //start battle en geef naam p mee
+        void PokemonBattle(p,t);       //start battle en geef naam p mee
 
         if(p.Fainted())
         {

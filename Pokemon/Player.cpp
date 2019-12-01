@@ -1,5 +1,8 @@
 #include <Player.h>
 
+using namespace std;
 
-bool Player::p_Fainted(){return (p_Health);}
-bool Player::Won(){return (p_BattlesWon);}
+bool Player::Fainted(){return (Health);}
+bool Player::Won(){return (BattlesWon);}
+
+int Player::GetHealth() const { return p.Health; }

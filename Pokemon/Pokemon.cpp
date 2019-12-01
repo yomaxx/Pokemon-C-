@@ -2,7 +2,7 @@
 #include <battle.h>
 #include <PokemonType.h>
 
-
+using namespace std;
 
 const Pokemon::PokemonData Pokemon::lookup[AMOUNT_OF_TYPES] = {
     {"Bulbasaur",Pokemon::GRASS,26,22,26},      //Health, attack, defense

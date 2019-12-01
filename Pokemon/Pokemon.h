@@ -1,4 +1,6 @@
-#include <Trainer.h>
+#pragma once
+#include <string>
+#include <iostream>
 #include <map>
 
 class Pokemon
@@ -32,6 +34,9 @@ public:
     static const PokemonData& getPokemonData( enum Type type );
 
     static Pokemon ChooseRandomPokemon;
+
+    Pokemon();
+    ~Pokemon();
 
 private:
     //static std::map<Type,PokemonData> lookup;
