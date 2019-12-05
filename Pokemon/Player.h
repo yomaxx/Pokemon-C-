@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PLAYER_H
 #define PLAYER_H
 #include <Trainer.h>
@@ -10,10 +11,12 @@ public:
     bool Won();
     bool Fainted();
     int GetHealth() const;
+    int ReduceHealth(int p_Health);
+    int GetDamage() const;
 
 protected:
     int BattlesWon;
-    int Health;
+    int p_Health;
 
 };
 

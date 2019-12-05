@@ -35,7 +35,7 @@ public:
 
     static Pokemon ChooseRandomPokemon;
 
-    Pokemon();
+    Pokemon() {}
     ~Pokemon();
 
 private:

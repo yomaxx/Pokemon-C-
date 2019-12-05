@@ -8,8 +8,8 @@ public:
 
     bool Fainted() const;
 
-    Trainer();
-    ~Trainer();
+    //Trainer();
+    //~Trainer();
 
 private:
     int t_Health;

@@ -1,9 +1,9 @@
+#include <utility.h>
 #include <battle.h>
 #include <Pokemon.h>
 #include <Player.h>
 #include <Trainer.h>
 #include <iostream>
-#include <utility.h>
 #include <thread>
 
 
@@ -12,7 +12,7 @@ void PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimuleerd
     std::cout << "What Pokemon will you choose: ?";
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-    //Pokemon E = Pokemon::ChooseRandomPokemon;
+    Pokemon E = Pokemon::ChooseRandomPokemon;
 
     while (!p.Fainted() && !t.Fainted())
     {
@@ -22,6 +22,7 @@ void PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimuleerd
 
         char input;
         std::cin >> input;
+
         if (IsChoice(input, 'R'))
         {
             if(KansBerekening(50))
@@ -37,21 +38,27 @@ void PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimuleerd
         }
         else if (IsChoice(input, 'F'))
         {
-            void PlayerAttacks();
-            void TrainerAttacks();
+            void PlayerAttacks(Player p, Trainer t);
+            void TrainerAttacks(Player p, Trainer t);
+        }
+        else
+        {
+            std::cout << "Wrong input, try r or f";
         }
     }
 }
 
 
 //Hier kan de speler aanvallen
-void PlayerAttacks()
+void PlayerAttacks(Player p, Trainer t)
 {
     std::cout << "Player valt Trainer aan";
+
+    t.ReduceHealth(p.GetDamage());
 }
 
 //Hier kan de trainer aanvallen
-void TrainerAttacks()
+void TrainerAttacks(Player p, Trainer t)
 {
 
 }

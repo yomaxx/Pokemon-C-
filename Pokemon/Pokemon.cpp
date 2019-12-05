@@ -5,10 +5,10 @@
 using namespace std;
 
 const Pokemon::PokemonData Pokemon::lookup[AMOUNT_OF_TYPES] = {
-    {"Bulbasaur",Pokemon::GRASS,26,22,26},      //Health, attack, defense
-    {"Charmander",Pokemon::FIRE,29,23,22},
-    {"Squirtle",Pokemon::WATER,32,18,26},
-    {"Bart",Pokemon::TEACHER,120,5,8}
+    {"Bulbasaur",Pokemon::GRASS,46,22,26},      //Health, attack, defense
+    {"Charmander",Pokemon::FIRE,49,23,22},
+    {"Squirtle",Pokemon::WATER,52,18,26},
+    {"Bart",Pokemon::TEACHER,150,5,8}
 };
 
 Pokemon Pokemon::ChooseRandomPokemon

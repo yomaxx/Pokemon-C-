@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+    Game.cpp \
     Trainer.cpp \
      Trainer.cpp \
         Player.cpp \
@@ -13,6 +14,7 @@ SOURCES += \
     utility.cpp
 
 HEADERS += \
+    Game.h \
     Player.h \
     Trainer.h \
     battle.h \
