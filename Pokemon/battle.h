@@ -7,7 +7,7 @@
 class Battle
 {
 public:
-    void PokemonBattle(Player p, Trainer t);
+    static void PokemonBattle(Player p, Trainer t);
 
     void PlayerAttacks(Player p, Trainer t);
     void TrainerAttacks(Player p, Trainer t);

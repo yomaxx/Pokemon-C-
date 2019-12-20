@@ -11,10 +11,15 @@ const Pokemon::PokemonData Pokemon::lookup[AMOUNT_OF_TYPES] = {
     {"Bart",Pokemon::TEACHER,150,5,8}
 };
 
-Pokemon Pokemon::ChooseRandomPokemon
+Pokemon * Pokemon::ChoosePokemon(std::string)
 {
+    return new Pokemon("Bulbasaur");
+}
 
-};
+Pokemon * Pokemon::ChooseRandomPokemon()
+{
+    return new Pokemon("missingno");
+}
 
 const Pokemon::PokemonData & Pokemon::getPokemonData( Pokemon::Type type )
 {

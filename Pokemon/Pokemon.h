@@ -33,13 +33,14 @@ public:
 
     static const PokemonData& getPokemonData( enum Type type );
 
-    static Pokemon ChooseRandomPokemon;
+    static Pokemon * ChoosePokemon(std::string);
+    static Pokemon * ChooseRandomPokemon();
 
-    Pokemon() {}
-    ~Pokemon();
+    Pokemon(const std::string &name) : name(name) {}
+    ~Pokemon() {}
 
 private:
     //static std::map<Type,PokemonData> lookup;
     static const PokemonData lookup[AMOUNT_OF_TYPES];
-
+    const std::string name;
 };

@@ -1,15 +1,15 @@
-#pragma once
 #include <Trainer.h>
 #include <Player.h>
 #include <time.h>
 #include <iostream>
 #include <Game.h>
+#include <battle.h>
 
 
-void StartGame()
+void Game::StartGame()
 {
     //seed halen voor random nummers later
-    srand(static_cast<unsigned int>(time(NULL)));
+    srand(static_cast<unsigned int>(time(nullptr)));
 
     //Naam speler opgeven
     std::cout << "Enter your name (no spaces): ";
@@ -23,21 +23,21 @@ void StartGame()
     Trainer t(TrainerName);
 
     //while je nog niet fainted of gewonnen hebt
-    while(!p.Fainted() && !p.Won())
-    {
-        void PokemonBattle(Player p, Trainer t);       //start battle en geef naam p mee
+    //while(!p.Fainted() && !p.Won())
+    //{
+        Battle::PokemonBattle(p, t);       //start battle en geef naam p mee
 
         if(p.Fainted())
         {
             std::cout << "Game over!" << std::endl;
-            break;
+            //break;
         }
         if(p.Won())
         {
             std::cout << "You won!" << std::endl;
-            break;
+            //break;
         }
-    }
+    //}
 
 
 }

@@ -7,12 +7,16 @@
 #include <thread>
 
 
-void PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimuleerd
+void Battle::PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimuleerd
 {
+    std::cout << "--------------------------\n      Battle Started\n--------------------------\n";
     std::cout << "What Pokemon will you choose: ?";
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::string PokemonPlayer;
+    std::cin >> PokemonPlayer;
+    Pokemon* P = Pokemon::ChoosePokemon(PokemonPlayer);
+    //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-    Pokemon E = Pokemon::ChooseRandomPokemon;
+    Pokemon* T = Pokemon::ChooseRandomPokemon();
 
     while (!p.Fainted() && !t.Fainted())
     {
@@ -23,9 +27,9 @@ void PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimuleerd
         char input;
         std::cin >> input;
 
-        if (IsChoice(input, 'R'))
+        if (Utility::IsChoice(input, 'R'))
         {
-            if(KansBerekening(50))
+            if(Utility::KansBerekening(50))
             {
                 std::cout << std::endl << "You fled the battle" << std::endl;
                 return;
@@ -36,7 +40,7 @@ void PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimuleerd
                 void TrainerAttacks();
             }
         }
-        else if (IsChoice(input, 'F'))
+        else if (Utility::IsChoice(input, 'F'))
         {
             void PlayerAttacks(Player p, Trainer t);
             void TrainerAttacks(Player p, Trainer t);
@@ -54,7 +58,7 @@ void PlayerAttacks(Player p, Trainer t)
 {
     std::cout << "Player valt Trainer aan";
 
-    t.ReduceHealth(p.GetDamage());
+    //t.ReduceHealth(p.GetDamage());
 }
 
 //Hier kan de trainer aanvallen

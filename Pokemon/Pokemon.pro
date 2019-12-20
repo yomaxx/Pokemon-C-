@@ -6,7 +6,6 @@ CONFIG -= qt
 SOURCES += \
     Game.cpp \
     Trainer.cpp \
-     Trainer.cpp \
         Player.cpp \
         main.cpp \
     battle.cpp \

@@ -5,10 +5,10 @@
 class Utility
 {
 public:
-bool IsChoice(const char input, const char UpperChoice);
+static bool IsChoice(const char input, const char UpperChoice);
 
-bool RandomNummer(int min, int max);
+static bool RandomNummer(int min, int max);
 
-bool KansBerekening(int kans);
+static bool KansBerekening(int kans);
 };
 #endif // UTILITY_H
