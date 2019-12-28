@@ -6,10 +6,10 @@
 #include <iostream>
 #include <thread>
 
-
-void Battle::PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimuleerd
+//De battle volgorde & escapen wordt hier bepaald
+void Battle::PokemonBattle(Player p, Trainer t)
 {
-    std::cout << "--------------------------\n      Battle Started\n--------------------------\n";
+    std::cout << "\n--------------------------\n      Battle Started\n--------------------------\n\n";
     std::cout << "What Pokemon will you choose: ?";
     std::string PokemonPlayer;
     std::cin >> PokemonPlayer;
@@ -18,25 +18,25 @@ void Battle::PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimu
 
     Pokemon* T = Pokemon::ChooseRandomPokemon();
 
-    while (!p.Fainted() && !t.Fainted())
+    while (!P->Fainted() && !T->Fainted())
     {
-        std::cout << std::endl << "Your health: " << p.GetHealth() << std::endl;
+        std::cout << std::endl << "Your health: "  << std::endl;
 
         std::cout << "What will you do ?: (R)un or (F)ight: ";
 
-        char input;
+        unsigned char input;
         std::cin >> input;
 
         if (Utility::IsChoice(input, 'R'))
         {
             if(Utility::KansBerekening(50))
             {
-                std::cout << std::endl << "You fled the battle" << std::endl;
+                std::cout << "You fled the battle";
                 return;
             }
             else
             {
-                std::cout << std::endl << "You failed to flee. Time for another round." << std::endl;
+                std::cout << "You failed to flee. Time for another round.";
                 void TrainerAttacks();
             }
         }
@@ -54,15 +54,15 @@ void Battle::PokemonBattle(Player p, Trainer t)    //Hier wordt de battle gesimu
 
 
 //Hier kan de speler aanvallen
-void PlayerAttacks(Player p, Trainer t)
+void PlayerAttacks(Pokemon P, Pokemon T)
 {
     std::cout << "Player valt Trainer aan";
 
-    //t.ReduceHealth(p.GetDamage());
+
 }
 
 //Hier kan de trainer aanvallen
-void TrainerAttacks(Player p, Trainer t)
+void TrainerAttacks(Pokemon P, Pokemon T)
 {
 
 }

@@ -5,7 +5,7 @@
 class Utility
 {
 public:
-static bool IsChoice(const char input, const char UpperChoice);
+static bool IsChoice(const unsigned char input, const unsigned char UpperChoice);
 
 static bool RandomNummer(int min, int max);
 

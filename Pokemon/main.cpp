@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    std::cout <<"Welcome to Pokemon\n";
+    std::cout <<"\nWelcome to Pokemon budget edition\n\n";
 
     Game::StartGame();
     return 0;

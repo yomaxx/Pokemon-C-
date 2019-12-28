@@ -7,4 +7,4 @@ Trainer::Trainer(const std::string &name) : Pokemon (name)
 
 }
 
-bool Trainer::Fainted() const{return t_Health >0;}
+bool Trainer::Fainted() const{return t_Health < 0;}

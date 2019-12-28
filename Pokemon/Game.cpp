@@ -10,6 +10,8 @@ void Game::StartGame()
 {
     //seed halen voor random nummers later
     srand(static_cast<unsigned int>(time(nullptr)));
+    int test = rand();
+    std::cout << test;
 
     //Naam speler opgeven
     std::cout << "Enter your name (no spaces): ";
@@ -27,7 +29,7 @@ void Game::StartGame()
     //{
         Battle::PokemonBattle(p, t);       //start battle en geef naam p mee
 
-        if(p.Fainted())
+        /*if(P.Fainted())
         {
             std::cout << "Game over!" << std::endl;
             //break;
@@ -36,7 +38,13 @@ void Game::StartGame()
         {
             std::cout << "You won!" << std::endl;
             //break;
-        }
+        }*/
+
+        std::cout << std::endl << "Play again? (Y/N):";
+        unsigned char choice;
+        std::cin >> choice;
+        std::cout << std::endl;
+
     //}
 
 
