@@ -1,2 +1,3 @@
-# 2EA-A
-code gebruikt in 2de jaar van opleideing
+# PokemonC++
+
+Text based pokemon game written in c++
