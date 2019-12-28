@@ -2,22 +2,18 @@
 #include <string>
 #include <iostream>
 #include <map>
+#include <Trainer.h>
 
 
-class Pokemon
+class Pokemon : public Trainer
 {
 public:
 
-    enum Family
-    {
-        GRASS,
-        FIRE,
-        WATER
-    };
     struct PokemonData
     {
       std::string name;
-      enum Family family;
+      const char Family;
+      int Health;
       int MaxHealth;
       int attack;
       int defense;
@@ -33,12 +29,12 @@ public:
 
     static const PokemonData& getPokemonData( enum PokemonType type );
 
-    static Pokemon * ChoosePokemon(std::string);
+    static Pokemon * ChoosePokemon(int Choice);
     static Pokemon * ChooseRandomPokemon();
 
     bool Fainted();
 
-    Pokemon(const std::string &name) : name(name) {}
+    //Pokemon(const std::string &name) : name(name) {}
     Pokemon (PokemonType);
 
     ~Pokemon() {}
@@ -47,6 +43,8 @@ private:
     //static std::map<Type,PokemonData> lookup;
     static const PokemonData lookup[AMOUNT_OF_TYPES];
     const std::string name;
+
+    PokemonType pokemontype;
 
 protected:
 

@@ -3,8 +3,8 @@
 
 using namespace std;
 
-Player::Player(const std::string &name) : Pokemon(name)
-{
-}
+//Player::Player(const std::string &name)
+//{
+//}
 
 

@@ -10,24 +10,20 @@ void Game::StartGame()
 {
     //seed halen voor random nummers later
     srand(static_cast<unsigned int>(time(nullptr)));
-    int test = rand();
-    std::cout << test;
 
     //Naam speler opgeven
     std::cout << "Enter your name (no spaces): ";
     std::string playerName;     //string playername aanmaken
-    std::cin >> playerName;     //naam uitlezen en opslaan in playername
-    Player p(playerName);       //player p aanmaken met je naam
+    std::cin >> playerName;     //naam uitlezen en opslaan in playername     //player p aanmaken met je naam
 
     std::cout << "Enter the name of your rival (no spaces): ";
     std::string TrainerName;
     std::cin >> TrainerName;
-    Trainer t(TrainerName);
 
     //while je nog niet fainted of gewonnen hebt
     //while(!p.Fainted() && !p.Won())
     //{
-        Battle::PokemonBattle(p, t);       //start battle en geef naam p mee
+        Battle::PokemonBattle();       //start battle en geef naam p mee
 
         /*if(P.Fainted())
         {

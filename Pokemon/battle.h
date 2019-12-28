@@ -7,10 +7,10 @@
 class Battle
 {
 public:
-    static void PokemonBattle(Player p, Trainer t);
+    static void PokemonBattle();
 
-    void PlayerAttacks(Player p, Trainer t);
-    void TrainerAttacks(Player p, Trainer t);
+    void PlayerAttacks(Player p, Pokemon t);
+    void TrainerAttacks(Player p, Pokemon t);
 
 private:
 };

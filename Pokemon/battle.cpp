@@ -7,18 +7,18 @@
 #include <thread>
 
 //De battle volgorde & escapen wordt hier bepaald
-void Battle::PokemonBattle(Player p, Trainer t)
+void Battle::PokemonBattle()
 {
+    int choice = 0;
     std::cout << "\n--------------------------\n      Battle Started\n--------------------------\n\n";
     std::cout << "What Pokemon will you choose: ?";
-    std::string PokemonPlayer;
-    std::cin >> PokemonPlayer;
-    Pokemon* P = Pokemon::ChoosePokemon(PokemonPlayer);
+    std::cin >> choice;
+    Pokemon* P = Pokemon::ChoosePokemon(choice);
     //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-    Pokemon* T = Pokemon::ChooseRandomPokemon();
+    Pokemon* t = Pokemon::ChooseRandomPokemon();
 
-    while (!P->Fainted() && !T->Fainted())
+    while (!P->Fainted() && !t->Fainted())
     {
         std::cout << std::endl << "Your health: "  << std::endl;
 
@@ -42,8 +42,9 @@ void Battle::PokemonBattle(Player p, Trainer t)
         }
         else if (Utility::IsChoice(input, 'F'))
         {
-            void PlayerAttacks(Player p, Trainer t);
-            void TrainerAttacks(Player p, Trainer t);
+
+            void PlayerAttacks(Player p, Pokemon t);
+            void TrainerAttacks(Player p, Pokemon t);
         }
         else
         {
@@ -54,7 +55,7 @@ void Battle::PokemonBattle(Player p, Trainer t)
 
 
 //Hier kan de speler aanvallen
-void PlayerAttacks(Pokemon P, Pokemon T)
+void PlayerAttacks(Pokemon P, Pokemon t)
 {
     std::cout << "Player valt Trainer aan";
 
@@ -62,7 +63,7 @@ void PlayerAttacks(Pokemon P, Pokemon T)
 }
 
 //Hier kan de trainer aanvallen
-void TrainerAttacks(Pokemon P, Pokemon T)
+void TrainerAttacks(Pokemon P, Pokemon t)
 {
-
+    std::cout << "Blue's pokemon has :" << t.GetHealth() << "Health" << std::endl;
 }
