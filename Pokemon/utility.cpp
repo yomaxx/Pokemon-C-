@@ -10,20 +10,24 @@ bool Utility::IsChoice(const unsigned  char input, const unsigned char UpperChoi
     return (input == UpperChoice || input == static_cast<char>(tolower(UpperChoice)));
 }
 
-//Geeft een random nummer tussen de meegegeven min & max waarde
-bool Utility::RandomNummer(int min, int max)
-{
-    static const double Number = 1.0 / (static_cast<double> (RAND_MAX) + 1.0);
-
-    return static_cast<int>(rand() * Number * (max - min + 1) + min);
-}
-
 //Kijkt of de waarde in kans grotr of gelijk is aan het random nummer
 bool Utility::KansBerekening(int kans)
 {
-    int test = RandomNummer(1,100);
-    std::cout << test;
-    return (RandomNummer(1, 100) <= kans);
+    int test = RandomNummer(1, 100);
+    return (kans <= test);
 }
 
+//Geeft een random nummer tussen de meegegeven min & max waarde in int
+int Utility::RandomNummer(int min, int max)
+{
+    int num = min + rand() % max;
+    return num;
+}
+
+//Geeft een random nummer tussen de meegegeven min & max waarde in float
+float Utility::RandomNummer(float min, float max)
+{
+    float num = min + (float(rand())) / max;
+    return num;
+}
 

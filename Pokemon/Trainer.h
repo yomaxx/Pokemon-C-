@@ -9,6 +9,7 @@ public:
     Trainer
     (
         const std::string &name,
+        const std::string &Move,
         char Family,
         int Health,
         int MaxHealth,
@@ -17,16 +18,31 @@ public:
     );
     ~Trainer(){}
 
+    std::string &GetName();
+    std::string &GetMove();
+
+    int GetMaxHealth() const;
     int GetHealth() const;
+    int GetAttack() const;
+    int GetDefense() const;
+
+    char GetType() const;
+
     bool Fainted() const;
 
+    void ReduceHealth(int Damage);
+    void ReduceAttack(int Reduce);
+    void ReduceDefense(int Reduce);
+
 protected:
-    std::string t_name;
-    char t_family;
-    int t_Health;
-    int t_MaxHealth;
-    int t_Attack;
-    int t_Defense;
+    std::string PokemonName;
+    std::string PokemonMove;
+    char PokemonFamily;
+    int  PokemonHealth;
+    int  PokemonMaxHealth;
+    int  PokemonAttack;
+    int PokemonDefense;
+
 };
 
 

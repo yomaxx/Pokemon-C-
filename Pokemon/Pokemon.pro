@@ -5,20 +5,18 @@ CONFIG -= qt
 
 SOURCES += \
     Game.cpp \
-    Trainer.cpp \
-        Player.cpp \
-        main.cpp \
+    main.cpp \
     battle.cpp \
-    Pokemon.cpp \
-    utility.cpp
+    utility.cpp \
+    PokemonData.cpp \
+    Trainer.cpp
 
 HEADERS += \
-    Game.h \
-    Player.h \
-    Trainer.h \
     battle.h \
-    Pokemon.h \
-    utility.h
+    utility.h \
+    PokemonData.h \
+    Game.h \
+    Trainer.h
 
 RESOURCES += \
     music.qrc

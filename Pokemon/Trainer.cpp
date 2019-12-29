@@ -4,6 +4,7 @@
 Trainer::Trainer
 (
     const std::string &name,
+    const std::string &Move,
     char Family,
     int Health,
     int MaxHealth,
@@ -11,14 +12,27 @@ Trainer::Trainer
     int Defense
 )
     :
-    t_name(name),
-    t_family(Family),
-    t_Health(Health),
-    t_MaxHealth(MaxHealth),
-    t_Attack(Attack),
-    t_Defense(Defense)
+    PokemonName(name),
+    PokemonMove(Move),
+    PokemonFamily(Family),
+    PokemonHealth(Health),
+    PokemonMaxHealth(MaxHealth),
+    PokemonAttack(Attack),
+    PokemonDefense(Defense)
 {
 }
+std::string & Trainer::GetName() {return PokemonName; }
+std::string & Trainer::GetMove() {return PokemonMove; }
 
-int Trainer::GetHealth() const {return t_Health; }
-bool Trainer::Fainted() const{return t_Health < 0; }
+int Trainer::GetMaxHealth() const {return PokemonMaxHealth; }
+int Trainer::GetHealth() const {return PokemonHealth; }
+int Trainer::GetAttack() const {return PokemonAttack; }
+int Trainer::GetDefense() const {return PokemonDefense; }
+
+char Trainer::GetType() const {return PokemonFamily;}
+
+bool Trainer::Fainted() const{return PokemonHealth < 0; }
+
+void Trainer::ReduceHealth(int Damage){PokemonHealth -= Damage;}
+void Trainer::ReduceAttack(int Reduce){PokemonAttack -= Reduce;}
+void Trainer::ReduceDefense(int Reduce){PokemonDefense -= Reduce;}

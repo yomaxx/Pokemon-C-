@@ -1,5 +1,5 @@
 #pragma once
-#include <Pokemon.h>
+#include <PokemonData.h>
 #include <Trainer.h>
 
 class Player : public Pokemon
