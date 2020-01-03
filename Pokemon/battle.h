@@ -9,10 +9,11 @@ class Battle
 public:
     static void PokemonBattle(std::string, std::string);
 
-    static void PlayerTurn(Pokemon &p, Pokemon &t);
-    static void TrainerTurn(Pokemon &p, Pokemon &t);
+    static void PlayerTurn(Pokemon &p, Pokemon &t, std::string, int choice);
+    static void TrainerTurn(Pokemon &p, Pokemon &t, std::string);
 
-    static int CalDamage(int Attack, int Defense, int Power, int effect);
+    static float CalDamage(float Attack, float Defense, int Power, int effect);
+
     static int CalEffect(char TypePl, char TypeTr);
 
 private:

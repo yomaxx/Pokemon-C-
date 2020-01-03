@@ -34,7 +34,7 @@ public:
     void ReduceAttack(int Reduce);
     void ReduceDefense(int Reduce);
 
-protected:
+private:
     std::string PokemonName;
     std::string PokemonMove;
     char PokemonFamily;

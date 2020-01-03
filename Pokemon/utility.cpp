@@ -13,21 +13,17 @@ bool Utility::IsChoice(const unsigned  char input, const unsigned char UpperChoi
 //Kijkt of de waarde in kans grotr of gelijk is aan het random nummer
 bool Utility::KansBerekening(int kans)
 {
-    int test = RandomNummer(1, 100);
-    return (kans <= test);
+    return RandomNummer(1, 100) <= kans;
 }
 
 //Geeft een random nummer tussen de meegegeven min & max waarde in int
 int Utility::RandomNummer(int min, int max)
 {
-    int num = min + rand() % max;
-    return num;
+    return min + rand() % max;
 }
 
 //Geeft een random nummer tussen de meegegeven min & max waarde in float
 float Utility::RandomNummer(float min, float max)
 {
-    float num = min + (float(rand())) / max;
-    return num;
+    return  (max - min) * ((((float) rand()) / (float) RAND_MAX)) + min ;
 }
-

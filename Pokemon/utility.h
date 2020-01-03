@@ -5,11 +5,12 @@
 class Utility
 {
 public:
-static bool IsChoice(const unsigned char input, const unsigned char UpperChoice);
-static bool KansBerekening(int kans);
 
-static int RandomNummer(int min, int max);
-static float RandomNummer(float min, float max);
+    static bool IsChoice(const unsigned char input, const unsigned char UpperChoice);
+    static bool KansBerekening(int kans);
+
+    static int RandomNummer(int min, int max);
+    static float RandomNummer(float min, float max);
 
 
 };

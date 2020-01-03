@@ -31,7 +31,7 @@ int Trainer::GetDefense() const {return PokemonDefense; }
 
 char Trainer::GetType() const {return PokemonFamily;}
 
-bool Trainer::Fainted() const{return PokemonHealth < 0; }
+bool Trainer::Fainted() const{return PokemonHealth <= 0; }
 
 void Trainer::ReduceHealth(int Damage){PokemonHealth -= Damage;}
 void Trainer::ReduceAttack(int Reduce){PokemonAttack -= Reduce;}

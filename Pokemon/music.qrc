@@ -1,2 +1,5 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/Music">
+        <file>Pokemon-battle.mp3</file>
+    </qresource>
+</RCC>

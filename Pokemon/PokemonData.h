@@ -33,8 +33,6 @@ public:
     static Pokemon * ChoosePokemon(int Choice);
     static Pokemon * ChooseRandomPokemon();
 
-    bool Fainted();
-
     //Pokemon(const std::string &name) : name(name) {}
     Pokemon (PokemonType);
 
