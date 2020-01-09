@@ -5,7 +5,9 @@ Trainer::Trainer
 (
     const std::string &name,
     const std::string &Move,
-    char Family,
+    const std::string Family,
+    const std::string EffectiveFamily,
+    const std::string WeakFamily,
     int Health,
     int MaxHealth,
     int Attack,
@@ -15,6 +17,8 @@ Trainer::Trainer
     PokemonName(name),
     PokemonMove(Move),
     PokemonFamily(Family),
+    PokemonEffective(EffectiveFamily),
+    PokemonWeak(WeakFamily),
     PokemonHealth(Health),
     PokemonMaxHealth(MaxHealth),
     PokemonAttack(Attack),
@@ -23,16 +27,19 @@ Trainer::Trainer
 }
 std::string & Trainer::GetName() {return PokemonName; }
 std::string & Trainer::GetMove() {return PokemonMove; }
+std::string & Trainer::GetType() {return PokemonFamily;}
+std::string & Trainer::GetEffectiveType() {return PokemonEffective;}
+std::string & Trainer::GetWeakType() {return PokemonWeak;}
 
 int Trainer::GetMaxHealth() const {return PokemonMaxHealth; }
 int Trainer::GetHealth() const {return PokemonHealth; }
 int Trainer::GetAttack() const {return PokemonAttack; }
 int Trainer::GetDefense() const {return PokemonDefense; }
 
-char Trainer::GetType() const {return PokemonFamily;}
-
-bool Trainer::Fainted() const{return PokemonHealth <= 0; }
+bool Trainer::Fainted() const{return PokemonHealth <= 0;}
 
 void Trainer::ReduceHealth(int Damage){PokemonHealth -= Damage;}
+void Trainer::UsePotion(){PokemonHealth += 20; if(PokemonHealth >= PokemonMaxHealth) {PokemonMaxHealth = PokemonHealth;}}
+void Trainer::NegativeHealth(){if(PokemonHealth < 0){PokemonHealth = 0;}}
 void Trainer::ReduceAttack(int Reduce){PokemonAttack -= Reduce;}
 void Trainer::ReduceDefense(int Reduce){PokemonDefense -= Reduce;}

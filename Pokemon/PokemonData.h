@@ -13,7 +13,9 @@ public:
     {
       std::string name;
       std::string Move;
-      const char Family;
+      std::string Family;
+      std::string EffectiveFamily;
+      std::string WeakFamily;
       int Health;
       int MaxHealth;
       int attack;
@@ -21,10 +23,15 @@ public:
     };
     enum PokemonType
     {
-        Bulbasaur = 0,
+        Bulbasaur,
         Charmander,
         Squirtle,
-        Bart,
+        Pidgey,
+        Pikachu,
+        Mankey,
+        Eevee,
+        Snorlax,
+        MissingNo,
         AMOUNT_OF_TYPES     //elke enum krijgt een nummer, dus als je deze oproept weet je hoeveel in dit enum zitten
     };
 

@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/Music">
-        <file>Pokemon-battle.mp3</file>
+        <file>Battle.mp3</file>
+        <file>Pokemon-Battle-trainer.mp3</file>
     </qresource>
 </RCC>

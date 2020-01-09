@@ -16,36 +16,21 @@ void Game::StartGame()
         std::this_thread::sleep_for(std::chrono::milliseconds(1500));
         std::cout << "Enter your name (no spaces): ";
         std::string PlayerName;     //string playername aanmaken
-        std::cin >> PlayerName;     //naam uitlezen en opslaan in playername     //player p aanmaken met je naam
+        std::cin >> PlayerName;     //naam uitlezen en opslaan in playername
+        PlayerName.resize(20);      //lengte naam maximaal 20
 
         std::cout << "Enter the name of your rival (no spaces): ";
         std::string TrainerName;
         std::cin >> TrainerName;
+        TrainerName.resize(20);
 
-
-    //while je nog niet fainted of gewonnen hebt
-    //while(!p.Fainted() && !p.Won())
-    //{
-        Battle::PokemonBattle(PlayerName, TrainerName);       //start battle en geef naam p mee
-
-    /*
-        if(p.Fainted())
+        if(Battle::PokemonBattle(PlayerName, TrainerName))       //start battle en geef namen spelers mee
         {
-            std::cout << "Game over!" << std::endl;
-            //break;
+            std::cout << TrainerName << " blacked out...\n You won";
         }
-        if(p.Won())
+        else
         {
-            std::cout << "You won!" << std::endl;
-            //break;
+            std::cout << PlayerName << " blacked out...\n";
         }
-
-        std::cout << std::endl << "Play again? (Y/N):";
-        unsigned char choice;
-        std::cin >> choice;
-        std::cout << std::endl;
-    */
-    //}
-
-
+        std::this_thread::sleep_for(std::chrono::milliseconds(2500));
 }
