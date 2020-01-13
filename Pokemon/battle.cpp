@@ -105,7 +105,7 @@ void Battle::PlayerTurn(Pokemon &p, Pokemon &t, std::string PlayerName, int choi
             case 4:
             {
                 std::cout <<p.GetName() << " uses " <<p.GetMove() << "\n";
-                int Damage = CalDamage(p.GetAttack(), t.GetDefense(), 40, CalEffect(p.GetType(),p.GetWeakType(),t.GetWeakType(), t.GetType()));
+                int Damage = CalDamage(p.GetAttack(), t.GetDefense(), 50, CalEffect(p.GetType(),p.GetWeakType(),t.GetWeakType(), t.GetType()));
                 t.ReduceHealth(Damage);
                 break;
             }
@@ -115,7 +115,6 @@ void Battle::PlayerTurn(Pokemon &p, Pokemon &t, std::string PlayerName, int choi
 
     else if(choice == 2)
     {
-        std::cout << "What item do you want to use ? ";
         p.UsePotion();
         std::cout <<"\n" <<PlayerName << " used a potion on " << p.GetName() << "\n";
         std::this_thread::sleep_for(std::chrono::milliseconds(2000));
@@ -142,7 +141,7 @@ void Battle::TrainerTurn(Pokemon &p, Pokemon &t, std::string TrainerName)
     {
         std::cout << TrainerName << "'s ";
         std::cout <<t.GetName() << " uses attack\n";
-        int Damage = CalDamage(t.GetAttack(), p.GetDefense(), 40);
+        int Damage = CalDamage(t.GetAttack(), p.GetDefense(), 50);
         p.ReduceHealth(Damage);
     }
 std::this_thread::sleep_for(std::chrono::milliseconds(2000));
@@ -230,7 +229,7 @@ bool Battle::PokemonBattle(std::string PlayerName, std::string TrainerName)
         if(!p->Fainted())
         {
             do{
-            std::cout << "\n\n 1): Attack\n 2): Items\n 3): Pokemon\n 4): Run\n What do you want to do? : " ;
+            std::cout << "\n\n 1): Attack\n 2): Potions\n 3): Pokemon\n 4): Run\n What do you want to do? : " ;
             std::cin.clear();
             std::cin.sync();
             std::cin >> choice;

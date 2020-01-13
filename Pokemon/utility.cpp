@@ -5,7 +5,7 @@
 
 //stuurt true terug als de input juist is (kleine als grote letter)
 //Zet de hoofdleter om naar kleine letter als deze niet klein ingegeven is
-bool Utility::IsChoice(const unsigned  char input, const unsigned char UpperChoice)
+bool Utility::IsChoice(const unsigned char input, const unsigned char UpperChoice)
 {
     return (input == UpperChoice || input == static_cast<char>(tolower(UpperChoice)));
 }
